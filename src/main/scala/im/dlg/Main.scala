@@ -1,6 +1,7 @@
 package im.dlg
 
-import im.dlg.configuration.{BotConfigurator}
+import im.dlg.api.InternalApi
+import im.dlg.configuration.BotConfigurator
 import org.slf4j.LoggerFactory
 
 object Main {
@@ -9,16 +10,21 @@ object Main {
     val logger = LoggerFactory.getLogger("Main")
 
     val config = new BotConfigurator()
-      .addHost("emp.dlg.im")
+      .addHost("tls://epm.dlg.im")
       .addPort(443)
       .addIsSecure(false)
       .addToken("a7d1fe1409b06bd75a19aea9c66f63b461ca1db7")
       .addBotName("scala")
       .build()
 
-    new NettyChannelWrapper(config).connect()
+    val api = new InternalApi(config)
+    api.start()
 
     logger.debug(config.host + ":" + config.port + "?security=" + config.isSecure)
+
+    while(true) {
+
+    }
   }
 
 }
