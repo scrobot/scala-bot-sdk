@@ -1,5 +1,7 @@
 # Dialog Bot SDK on Scala
 
+non official Bot SDK to https://dlg.im
+
 ## Configuration
 
 You have 2 ways to configurate your Bot. 

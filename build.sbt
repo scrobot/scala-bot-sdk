@@ -16,10 +16,13 @@ val bouncyCastle = "1.55"
 
 libraryDependencies ++= Seq(
   "com.typesafe" % "config" % "1.3.4",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
+  "ch.qos.logback" % "logback-classic" % "1.1.2",
+  "org.slf4j" % "slf4j-api" % "1.7.10",
   "io.monix" %% "monix" % monix,
   "org.typelevel" %% "cats-core" % cats,
-  "im.dlg" %% "dialog-platform-services" % dialogPlatform exclude("com.google.guava", "guava"),
-  "com.github.ben-manes.caffeine" % "caffeine"  % caffeine exclude("com.google.guava", "guava"),
+  "im.dlg" %% "dialog-platform-services" % dialogPlatform,
+  "com.github.ben-manes.caffeine" % "caffeine"  % caffeine,
   "io.circe" %% "circe-core" % circe,
   "io.circe" %% "circe-generic" % circe,
   "io.circe" %% "circe-parser" % circe
